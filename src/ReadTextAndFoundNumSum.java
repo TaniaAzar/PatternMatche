@@ -6,7 +6,7 @@ public class ReadTextAndFoundNumSum {
     public static void main(String[] args) {
 
         //create the file
-        File newFile = new File("D://Java//note.txt");
+        File newFile = new File("C://note.txt");
         try {
             boolean create = newFile.createNewFile();
             if (create){
@@ -17,7 +17,7 @@ public class ReadTextAndFoundNumSum {
         }
 
         //write data in the file
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D://Java//note.txt"))) {
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C://note.txt"))) {
 
             String text = "123 Hello!!";
             bufferedWriter.write(text);
@@ -27,7 +27,7 @@ public class ReadTextAndFoundNumSum {
         }
 
         //find patter and look for the sum from integers
-        try (BufferedReader reader = new BufferedReader(new FileReader("D://Java//note.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C://note.txt"))) {
             Pattern pattern = Pattern.compile("[0-9]");
 
             String s;
