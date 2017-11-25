@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class ReverceFile {
     public static void main(String[] args) {
 
-        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("D://Java//note.txt"))) {
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("D://note.txt"))) {
 
             StringBuilder stringBuilder = new StringBuilder();
             String s;

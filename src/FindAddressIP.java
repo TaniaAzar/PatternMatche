@@ -6,7 +6,7 @@ public class FindAddressIP {
     public static void main(String[] args) {
 
         //create the file
-        File newFile = new File("C://note.txt");
+        File newFile = new File("D://note.txt");
         try {
             boolean create = newFile.createNewFile();
             if (create){
@@ -16,8 +16,8 @@ public class FindAddressIP {
             e.printStackTrace();
         }
 
-        //create the file
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C://note.txt"))) {
+
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D://note.txt"))) {
 
             String text = "123.123.12.23 Hello my friend 123.123.12.23 fghgdeys 256.123.12.23";
             bufferedWriter.write(text);
@@ -27,7 +27,7 @@ public class FindAddressIP {
         }
 
         //finding of pattern and replace it
-        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("C://note.txt"))) {
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("D://note.txt"))) {
             Pattern pattern = Pattern.compile("(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])" +
                     "(\\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])){3}");
 
