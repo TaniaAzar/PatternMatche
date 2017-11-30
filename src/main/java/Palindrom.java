@@ -1,5 +1,6 @@
 import javax.swing.text.html.parser.Parser;
 import java.io.*;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +19,7 @@ public class Palindrom {
         }
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D://note2.txt"))){
-            String text = "А Лида гадила.";
+            String text = "А Лида гадила. А крот у хуторка.";
             bufferedWriter.write(text);
 
             System.out.println("String wrote");
@@ -46,6 +47,14 @@ public class Palindrom {
                 System.out.println(st);
                 System.out.println("----------");
 
+//                StringBuilder st = new StringBuilder();
+//                st.append(s.replaceAll("[.|!|?|]", "\n").trim().replaceAll(" ",""));
+//                System.out.println(st.toString());
+//
+//                System.out.println(st.reverse().toString());
+//                if (st.toString().equalsIgnoreCase(st.reverse().toString())){
+//                    System.out.print(" = true");
+//                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
