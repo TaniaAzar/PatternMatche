@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Palindrom {
     public static void main(String[] args) {
 
-        File file = new File("D://note2.txt");
+        File file = new File("C://note2.txt");
         try {
             boolean create = file.createNewFile();
             if (create){
@@ -18,7 +18,7 @@ public class Palindrom {
             e.printStackTrace();
         }
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D://note2.txt"))){
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C://note2.txt"))){
             String text = "А Лида гадила. А крот у хуторка.";
             bufferedWriter.write(text);
 
@@ -28,7 +28,7 @@ public class Palindrom {
             e.printStackTrace();
         }
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("D://note2.txt"))){
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("C://note2.txt"))){
 
             String s;
             while ((s = bufferedReader.readLine()) != null){
@@ -42,19 +42,20 @@ public class Palindrom {
                     st.append(strings[i].trim());
                 }
                 System.out.println(st);
-                st.reverse();
 
+
+                st.reverse();
                 System.out.println(st);
                 System.out.println("----------");
 
-//                StringBuilder st = new StringBuilder();
-//                st.append(s.replaceAll("[.|!|?|]", "\n").trim().replaceAll(" ",""));
-//                System.out.println(st.toString());
-//
-//                System.out.println(st.reverse().toString());
-//                if (st.toString().equalsIgnoreCase(st.reverse().toString())){
-//                    System.out.print(" = true");
-//                }
+        //       StringBuilder st = new StringBuilder();
+        //        st.append(s.replaceAll("[.|!|?|]", "\n").trim().replaceAll(" ",""));
+         //       System.out.println(st.toString());
+
+        //       System.out.println(st.reverse().toString());
+        //        if (st.toString().equalsIgnoreCase(st.reverse().toString())){
+         //           System.out.print(" = true");
+                //}
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
