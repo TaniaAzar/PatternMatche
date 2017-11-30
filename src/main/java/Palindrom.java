@@ -32,18 +32,17 @@ public class Palindrom {
             String s;
             while ((s = bufferedReader.readLine()) != null){
 
-                System.out.println(s);
-
                 String[] strings = s.split("[.|!|?]");
 
                 StringBuilder st = new StringBuilder();
 
                 for (int i = 0; i < strings.length; i++) {
                     System.out.println(strings[i]);
-                    st.append(strings[i]);
+                    st.append(strings[i].trim());
                 }
                 System.out.println(st);
                 st.reverse();
+
                 System.out.println(st);
                 System.out.println("----------");
 
