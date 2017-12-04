@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Palindrom {
     public static void main(String[] args) {
 
-        File file = new File("C://note2.txt");
+        File file = new File("D://note2.txt");
         try {
             boolean create = file.createNewFile();
             if (create){
@@ -18,8 +18,8 @@ public class Palindrom {
             e.printStackTrace();
         }
 
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("C://note2.txt"))){
-            String text = "А Лида гадила. А крот у хуторка.";
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("D://note2.txt"))){
+            String text = "А Лида гадила.";
             bufferedWriter.write(text);
 
             System.out.println("String wrote");
@@ -28,34 +28,35 @@ public class Palindrom {
             e.printStackTrace();
         }
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("C://note2.txt"))){
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("D://note2.txt"))){
+
+            Pattern pattern = Pattern.compile("[а-яА-Я\\.|!|?]");
+            StringBuilder stringBuilder = new StringBuilder();
 
             String s;
             while ((s = bufferedReader.readLine()) != null){
+                System.out.println(s);
 
                 String[] strings = s.split("[.|!|?]");
 
                 StringBuilder st = new StringBuilder();
 
+                int length = strings.length;
+
                 for (int i = 0; i < strings.length; i++) {
-                    System.out.println(strings[i]);
-                    st.append(strings[i].trim());
+
+                    st.append(strings[i].trim().replaceAll(" ",""));
+
+                    System.out.println(st.toString());
+                    System.out.print(st.reverse().toString());
+                    if (st.toString().equalsIgnoreCase(st.reverse().toString())){
+                        System.out.println("  - перложение является палиндромом");
+                    }else {
+                        System.out.println("  - перложение не является палиндромом");
+                    }
                 }
-                System.out.println(st);
 
-
-                st.reverse();
-                System.out.println(st);
                 System.out.println("----------");
-
-        //       StringBuilder st = new StringBuilder();
-        //        st.append(s.replaceAll("[.|!|?|]", "\n").trim().replaceAll(" ",""));
-         //       System.out.println(st.toString());
-
-        //       System.out.println(st.reverse().toString());
-        //        if (st.toString().equalsIgnoreCase(st.reverse().toString())){
-         //           System.out.print(" = true");
-                //}
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
